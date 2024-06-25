@@ -21,31 +21,43 @@
 </head>  
 <body>  
     <h2>考试调查</h2>  
-    <form action="/submit_survey" method="post">  
-        <table>  
-            <tr>  
-                <th>名字</th>  
-                <td><input type="text" name="name"></td>  
-            </tr>  
-            <tr>  
-                <th>考试结束时间</th>  
-                <td><input type="datetime-local" name="examEndTime"></td>  
-            </tr>  
-            <tr>  
-                <th>回家时间</th>  
-                <td><input type="datetime-local" name="returnTime"></td>  
-            </tr>  
-            <tr>  
-                <th>想不想约饭</th>  
-                <td>  
-                    <input type="radio" id="yes" name="wantDinner" value="yes">  
-                    <label for="yes">想</label>  
-                    <input type="radio" id="no" name="wantDinner" value="no">  
-                    <label for="no">不想</label>  
-                </td>  
-            </tr>  
-        </table>  
+    <form id="surveyForm" action="/submit_survey" method="post">    
+        <table>    
+            <tr>    
+                <th>名字</th>    
+                <td><input type="text" name="name"></td>    
+            </tr>    
+            <tr>    
+                <th>考试结束时间</th>    
+                <td><input type="datetime-local" name="examEndTime"></td>    
+            </tr>    
+            <tr>    
+                <th>回家时间</th>    
+                <td><input type="datetime-local" name="returnTime"></td>    
+            </tr>    
+            <tr>    
+                <th>想不想约饭</th>    
+                <td>    
+                    <input type="radio" id="yes" name="wantDinner" value="yes">    
+                    <label for="yes">想</label>    
+                    <input type="radio" id="no" name="wantDinner" value="no">    
+                    <label for="no">不想</label>    
+                </td>    
+            </tr>    
+        </table>    
         <input type="submit" value="提交">  
     </form>  
+  
+    <script>  
+        document.getElementById('surveyForm').addEventListener('submit', function(event) {  
+            event.preventDefault(); // 阻止默认的表单提交行为  
+  
+            // 假设数据提交成功后要跳转到"谢谢填写"页面（thank-you-page.html）  
+            // 在这里可以添加发送数据到服务器的代码，比如使用 fetch 函数  
+  
+            // 重定向到谢谢填写页面  
+            window.location.href = "thank-you-page.html"; // 替换成你实际的谢谢填写页面的 URL  
+        });  
+    </script>  
 </body>  
 </html>  
