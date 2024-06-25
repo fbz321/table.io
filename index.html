@@ -3,7 +3,7 @@
 <head>  
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Data Collection Form</title>  
+    <title>考试调查表</title>  
     <style>  
         table {  
             border-collapse: collapse;  
@@ -20,18 +20,30 @@
     </style>  
 </head>  
 <body>  
-    <h2>Data Collection Form</h2>  
-    <form action="/submit_data" method="post">  
+    <h2>考试调查</h2>  
+    <form action="/submit_survey" method="post">  
         <table>  
             <tr>  
-                <th>字段1</th>  
-                <td><input type="text" name="field1"></td>  
+                <th>名字</th>  
+                <td><input type="text" name="name"></td>  
             </tr>  
             <tr>  
-                <th>字段2</th>  
-                <td><input type="text" name="field2"></td>  
+                <th>考试结束时间</th>  
+                <td><input type="datetime-local" name="examEndTime"></td>  
             </tr>  
-            <!-- 可以根据需要添加更多字段 -->  
+            <tr>  
+                <th>回家时间</th>  
+                <td><input type="datetime-local" name="returnTime"></td>  
+            </tr>  
+            <tr>  
+                <th>想不想约饭</th>  
+                <td>  
+                    <input type="radio" id="yes" name="wantDinner" value="yes">  
+                    <label for="yes">想</label>  
+                    <input type="radio" id="no" name="wantDinner" value="no">  
+                    <label for="no">不想</label>  
+                </td>  
+            </tr>  
         </table>  
         <input type="submit" value="提交">  
     </form>  
